@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 const Button = ({ linkValue, buttonValue }) => {
-    return (
-        <button>
-            <Link to="{linkValue}">{buttonValue}</Link>
-        </button>
-    );
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate(linkValue);
+    };
+    return <button onClick={handleClick}>{buttonValue}</button>;
 };
 
 export default Button;
